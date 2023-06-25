@@ -4,13 +4,13 @@
   "version": "0.1.0",
   "description": "Register global imports on demand for Vite and Webpack",
   "license": "MIT",
-  "homepage": "https://github.com/xiankaiqun/unplugin-copy#readme",
+  "homepage": "https://github.com/xiankq/unplugin-copy#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xiankaiqun/unplugin-copy.git"
+    "url": "git+https://github.com/xiankq/unplugin-copy.git"
   },
   "bugs": {
-    "url": "https://github.com/xiankaiqun/unplugin-copy/issues"
+    "url": "https://github.com/xiankq/unplugin-copy/issues"
   },
   "keywords": [
     "unplugin",
