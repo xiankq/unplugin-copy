@@ -2,16 +2,12 @@
 
 [![NPM version](https://img.shields.io/npm/v/unplugin-copy?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-copy)
 
-Starter template for [unplugin](https://github.com/unjs/unplugin).
+copy template for [unplugin](https://github.com/unjs/unplugin).
 
 ## Template Usage
 
 To use this template, clone it down using:
-
-```bash
-npx degit antfu/unplugin-copy my-unplugin
-```
-
+ 
 And do a global replace of `unplugin-copy` with your plugin name.
 
 Then you can start developing your unplugin 🔥
@@ -30,16 +26,19 @@ npm i unplugin-copy
 
 ```ts
 // vite.config.ts
-import Starter from 'unplugin-copy/vite'
+import copy from 'unplugin-copy/vite'
 
 export default defineConfig({
   plugins: [
-    Starter({ /* options */ }),
+    copy({
+      src: './node_modules/vue/dist/*',
+      dest: 'vue'
+    }),
   ],
 })
 ```
 
-Example: [`playground/`](./playground/)
+Example: [`example/`](./example/)
 
 <br></details>
 
@@ -48,11 +47,14 @@ Example: [`playground/`](./playground/)
 
 ```ts
 // rollup.config.js
-import Starter from 'unplugin-copy/rollup'
+import copy from 'unplugin-copy/rollup'
 
 export default {
   plugins: [
-    Starter({ /* options */ }),
+    copy({
+      src: './node_modules/vue/dist/*',
+      dest: 'vue'
+    }),
   ],
 }
 ```
@@ -68,7 +70,10 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    require('unplugin-copy/webpack')({ /* options */ })
+    copy({
+      src: './node_modules/vue/dist/*',
+      dest: 'vue'
+    }),
   ]
 }
 ```
@@ -82,7 +87,10 @@ module.exports = {
 // nuxt.config.js
 export default {
   buildModules: [
-    ['unplugin-copy/nuxt', { /* options */ }],
+    ['unplugin-copy/nuxt', {
+      src: './node_modules/vue/dist/*',
+      dest: 'vue'
+    }],
   ],
 }
 ```
@@ -99,7 +107,12 @@ export default {
 module.exports = {
   configureWebpack: {
     plugins: [
-      require('unplugin-copy/webpack')({ /* options */ }),
+      require('unplugin-copy/webpack')(
+        {
+          src: './node_modules/vue/dist/*',
+          dest: 'vue'
+        },
+      ),
     ],
   },
 }
@@ -113,10 +126,15 @@ module.exports = {
 ```ts
 // esbuild.config.js
 import { build } from 'esbuild'
-import Starter from 'unplugin-copy/esbuild'
+import copy from 'unplugin-copy/esbuild'
 
 build({
-  plugins: [Starter()],
+  plugins: [
+    copy({
+      src: './node_modules/vue/dist/*',
+      dest: 'vue'
+    }),
+  ],
 })
 ```
 
