@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": false,
+  "eslint.validate": ["js", "jsx", "ts", "tsx", "json", "vue", "jsonc", "md"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
