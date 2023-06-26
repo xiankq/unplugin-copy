@@ -6,7 +6,6 @@ import { resolveCopyTarget } from './resolve'
 
 export default createUnplugin<UnpluginCopyOptions>((options) => {
   return {
-    enforce: 'pre',
     name: 'unplugin-copy:vite-serve',
     vite: {
       async configureServer(server) {
