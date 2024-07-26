@@ -1,4 +1,5 @@
 import path from 'node:path'
+import process from 'node:process'
 import FastGlob from 'fast-glob'
 import type { Target } from '../types'
 
@@ -6,7 +7,7 @@ function removeRepeat<T>(list: T[]): T[] {
   return [...new Set(list)]
 }
 
-export async function resolveCopyTarget(targets: Target[]) {
+export function resolveCopyTarget(targets: Target[]) {
   const root = process.cwd()
 
   const promises = targets.map(async (target) => {
@@ -37,5 +38,5 @@ export async function resolveCopyTarget(targets: Target[]) {
     }
   })
 
-  return (await Promise.all(promises))
+  return Promise.all(promises)
 }

@@ -1,9 +1,5 @@
 # unplugin-copy
 
-⚠️ The project is still in an experimental state for rapid iteration, configuration options are subject to change！
-
-⚠️ 该项目仍然处于快速迭代的实验性状态，配置选项会随时更改！
-
 [![NPM version](https://img.shields.io/npm/v/unplugin-copy?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-copy)
 
 ## Install
@@ -48,7 +44,6 @@ export default {
 ```
 
 <br></details>
-
 
 <details>
 <summary>Webpack</summary><br>
