@@ -5,8 +5,5 @@
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
-  },
-  "ts-node": {
-    "module": "commonjs"
   }
 }

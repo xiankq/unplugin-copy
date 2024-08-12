@@ -1,32 +1,15 @@
 import { defineConfig } from 'vite'
-import Inspect from 'vite-plugin-inspect'
-import unpluginCopy from '../src/vite'
+import unpluginCopy from 'unplugin-copy/vite'
 
 export default defineConfig({
-  define: {
-    CESIUM_BASE_URL: JSON.stringify('./Cesium/'),
-  },
   plugins: [
-    Inspect(),
     unpluginCopy({
       targets: [
+        // http://localhost:5173/vue/index.js => node_modules/vue/index.js
         {
-          src: 'node_modules/cesium/Build/Cesium/Workers/**',
-          dest: 'cesium/Workers',
+          src: 'node_modules/vue/**',
+          dest: 'vue',
         },
-        {
-          src: 'node_modules/cesium/Build/Cesium/ThirdParty/**',
-          dest: 'cesium/ThirdParty',
-        },
-        {
-          src: 'node_modules/cesium/Build/Cesium/Assets/**',
-          dest: 'cesium/Assets',
-        },
-        {
-          src: 'node_modules/cesium/Build/Cesium/Widgets/**',
-          dest: 'cesium/Widgets',
-        },
-
       ],
     }),
   ],

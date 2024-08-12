@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises'
 import type { UnpluginFactory } from 'unplugin'
-import type { UnpluginCopyOptions } from '../types'
+import type { UnpluginCopyOptions } from '../'
 import { resolveCopyTarget } from './resolve'
 
 export const buildPlugin: UnpluginFactory<UnpluginCopyOptions, false> = (options, _meta) => {
@@ -22,6 +22,5 @@ export const buildPlugin: UnpluginFactory<UnpluginCopyOptions, false> = (options
       })
       await Promise.all(promises)
     },
-
   }
 }

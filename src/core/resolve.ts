@@ -1,7 +1,7 @@
 import path from 'node:path'
 import process from 'node:process'
 import FastGlob from 'fast-glob'
-import type { Target } from '../types'
+import type { Target } from '../'
 
 function removeRepeat<T>(list: T[]): T[] {
   return [...new Set(list)]

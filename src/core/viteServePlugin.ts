@@ -1,7 +1,7 @@
 import path from 'node:path'
 import type { UnpluginFactory } from 'unplugin'
 import serveStatic from 'serve-static'
-import type { UnpluginCopyOptions } from '../types'
+import type { UnpluginCopyOptions } from '../'
 import { resolveCopyTarget } from './resolve'
 
 export const viteServePlugin: UnpluginFactory<UnpluginCopyOptions, false> = (options, _meta) => {

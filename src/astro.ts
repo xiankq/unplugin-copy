@@ -1,4 +1,4 @@
-import type { UnpluginCopyOptions } from './types'
+import type { UnpluginCopyOptions } from './'
 
 import { unplugin } from '.'
 

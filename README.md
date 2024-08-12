@@ -1,29 +1,52 @@
 # unplugin-copy
 
+Replace variables in code with other values or expressions. Supports Vite, Rollup, Webpack, Rspack and more.
+
 [![NPM version](https://img.shields.io/npm/v/unplugin-copy?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-copy)
 
+##### NOTE
+
+The original intention of this plugin is to provide compatibility for lower-level plugins. You should give priority to using the `copy` that comes with the build tool.
+
+## Features
+
+- Support Vite, Webpack, Vue CLI, Rollup, esbuild and more, powered by unplugin.
+- In the Vite development environment, path mapping is used instead of real copying.
+
 ## Install
-shiyanxing
+
 ```bash
-npm i unplugin-copy
+npm i unplugin-copy -D
+
+pnpm i unplugin-copy -D
+
+yarn i unplugin-copy -D
 ```
+
+## Install
 
 <details>
 <summary>Vite</summary><br>
 
 ```ts
 // vite.config.ts
-import copy from 'unplugin-copy/vite'
+import unpluginCopy from 'unplugin-copy/vite'
 
 export default defineConfig({
   plugins: [
-    copy({
-      src: './node_modules/vue/dist/*',
-      dest: 'vue'
+    unpluginCopy({
+      targets: [
+        // http://localhost:5173/vue/index.js => node_modules/vue/index.js
+        {
+          src: 'node_modules/vue/**',
+          dest: 'vue',
+        },
+      ],
     }),
   ],
 })
 ```
+
 <br></details>
 
 <details>
@@ -31,13 +54,18 @@ export default defineConfig({
 
 ```ts
 // rollup.config.js
-import copy from 'unplugin-copy/rollup'
+import unpluginCopy from 'unplugin-copy/rollup'
 
 export default {
   plugins: [
-    copy({
-      src: './node_modules/vue/dist/*',
-      dest: 'vue'
+    unpluginCopy({
+      targets: [
+        // http://localhost:5173/vue/index.js => node_modules/vue/index.js
+        {
+          src: 'node_modules/vue/**',
+          dest: 'vue',
+        },
+      ],
     }),
   ],
 }
@@ -53,9 +81,14 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    copy({
-      src: './node_modules/vue/dist/*',
-      dest: 'vue'
+    unpluginCopy({
+      targets: [
+        // http://localhost:5173/vue/index.js => node_modules/vue/index.js
+        {
+          src: 'node_modules/vue/**',
+          dest: 'vue',
+        },
+      ],
     }),
   ]
 }
@@ -71,8 +104,13 @@ module.exports = {
 export default {
   buildModules: [
     ['unplugin-copy/nuxt', {
-      src: './node_modules/vue/dist/*',
-      dest: 'vue'
+      targets: [
+        // http://localhost:5173/vue/index.js => node_modules/vue/index.js
+        {
+          src: 'node_modules/vue/**',
+          dest: 'vue',
+        },
+      ],
     }],
   ],
 }
@@ -90,12 +128,15 @@ export default {
 module.exports = {
   configureWebpack: {
     plugins: [
-      require('unplugin-copy/webpack')(
-        {
-          src: './node_modules/vue/dist/*',
-          dest: 'vue'
-        },
-      ),
+      require('unplugin-copy/webpack')({
+        targets: [
+        // http://localhost:5173/vue/index.js => node_modules/vue/index.js
+          {
+            src: 'node_modules/vue/**',
+            dest: 'vue',
+          },
+        ],
+      }),
     ],
   },
 }
@@ -109,16 +150,23 @@ module.exports = {
 ```ts
 // esbuild.config.js
 import { build } from 'esbuild'
-import copy from 'unplugin-copy/esbuild'
+import unpluginCopy from 'unplugin-copy/esbuild'
 
 build({
   plugins: [
-    copy({
-      src: './node_modules/vue/dist/*',
-      dest: 'vue'
+    unpluginCopy({
+      targets: [
+        // http://localhost:5173/vue/index.js => node_modules/vue/index.js
+        {
+          src: 'node_modules/vue/**',
+          dest: 'vue',
+        },
+      ],
     }),
   ],
 })
 ```
 
 <br></details>
+
+The code idea comes from [vite-plugin-static-copy](https://github.com/sapphi-red/vite-plugin-static-copy).
