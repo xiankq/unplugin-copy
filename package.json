@@ -1,7 +1,7 @@
 {
   "name": "unplugin-copy",
   "type": "module",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "packageManager": "pnpm@9.12.1",
   "description": "",
   "license": "MIT",
