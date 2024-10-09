@@ -2,8 +2,7 @@
   "name": "unplugin-copy",
   "type": "module",
   "version": "0.1.6",
-  "packageManager": "pnpm@9.12.1",
-  "description": "",
+  "description": "Copy files and folders, with glob support.",
   "license": "MIT",
   "homepage": "https://github.com/xiankq/unplugin-copy#readme",
   "repository": {
