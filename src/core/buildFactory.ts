@@ -1,9 +1,9 @@
-import fs from 'node:fs/promises'
 import type { UnpluginFactory } from 'unplugin'
-import type { UnpluginCopyOptions } from '../'
+import type { UnpluginCopyOptions } from '../types'
+import fs from 'node:fs/promises'
 import { resolveCopyTarget } from './resolve'
 
-export const buildPlugin: UnpluginFactory<UnpluginCopyOptions, false> = (options, _meta) => {
+export const buildFactory: UnpluginFactory<UnpluginCopyOptions, false> = (options, _meta) => {
   return {
     name: 'unplugin-copy:build',
     vite: {

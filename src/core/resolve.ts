@@ -1,12 +1,18 @@
+import type { Target } from '../types'
 import path from 'node:path'
 import process from 'node:process'
 import FastGlob from 'fast-glob'
-import type { Target } from '../'
 
 function removeRepeat<T>(list: T[]): T[] {
   return [...new Set(list)]
 }
 
+/**
+ * 解析复制目标
+ *
+ * @param targets 目标数组
+ * @returns Promise 对象，包含所有目标的解析结果
+ */
 export function resolveCopyTarget(targets: Target[]) {
   const root = process.cwd()
 

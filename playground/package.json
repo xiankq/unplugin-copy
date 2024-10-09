@@ -2,17 +2,18 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "nodemon -w '../src/**/*.ts' -e .ts -x vite",
-    "build": "vite build"
+    "dev:vite": "nodemon -w '../src/**/*.ts' -e .ts -x vite",
+    "dev:rsbuild": "nodemon -w '../src/**/*.ts' -e .ts -x rsbuild dev",
+    "build:vite": "vite build",
+    "build:rsbuild": "rsbuild build"
   },
   "dependencies": {
-    "vue": "^3.4.37"
+    "vue": "^3.5.11"
   },
   "devDependencies": {
-    "ts-node": "^10.9.2",
-    "tsconfig-paths": "^4.2.0",
+    "@rsbuild/core": "^1.0.10",
     "unplugin-copy": "workspace:*",
-    "vite": "^5.4.0",
-    "vite-plugin-inspect": "^0.8.5"
+    "vite": "^5.4.8",
+    "vite-plugin-inspect": "^0.8.7"
   }
 }

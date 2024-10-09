@@ -1,7 +1,7 @@
+import type { UnpluginCopyOptions } from '.'
 import { addVitePlugin, addWebpackPlugin, defineNuxtModule } from '@nuxt/kit'
 import vite from './vite'
 import webpack from './webpack'
-import type { UnpluginCopyOptions } from '.'
 import '@nuxt/schema'
 
 export interface ModuleOptions extends UnpluginCopyOptions {

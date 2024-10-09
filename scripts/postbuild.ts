@@ -1,10 +1,10 @@
-import { basename, dirname, resolve } from 'node:path'
 import { promises as fs } from 'node:fs'
+import { basename, dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import fg from 'fast-glob'
 import chalk from 'chalk'
+import fg from 'fast-glob'
 
-async function run() {
+async function run(): Promise<void> {
   // fix cjs exports
   const files = await fg('*.cjs', {
     ignore: ['chunk-*'],

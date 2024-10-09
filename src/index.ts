@@ -1,21 +1,13 @@
 import type { UnpluginFactory } from 'unplugin'
+import type { UnpluginCopyOptions } from './types'
 import { createUnplugin } from 'unplugin'
-import { buildPlugin } from './core/buildPlugin'
-import { viteServePlugin } from './core/viteServePlugin'
-
-export interface Target {
-  src: string | string[]
-  dest: string
-}
-
-export interface UnpluginCopyOptions {
-  targets: Target[]
-}
+import { buildFactory } from './core/buildFactory'
+import { viteServeFactory } from './core/viteServeFactory'
 
 export const unpluginFactory: UnpluginFactory<UnpluginCopyOptions> = (options, meta) => {
   return [
-    viteServePlugin(options, meta),
-    buildPlugin(options, meta),
+    viteServeFactory(options, meta),
+    buildFactory(options, meta),
   ]
 }
 export const unplugin = /* #__PURE__ */ createUnplugin(unpluginFactory)

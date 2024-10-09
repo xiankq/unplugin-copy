@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
 import unpluginCopy from 'unplugin-copy/vite'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [
