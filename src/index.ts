@@ -4,7 +4,7 @@ import { createUnplugin } from 'unplugin'
 import { buildFactory } from './core/buildFactory'
 import { viteServeFactory } from './core/viteServeFactory'
 
-export const unpluginFactory: UnpluginFactory<UnpluginCopyOptions> = (options, meta) => {
+export const unpluginFactory: UnpluginFactory<UnpluginCopyOptions, true> = (options, meta) => {
   return [
     viteServeFactory(options, meta),
     buildFactory(options, meta),
