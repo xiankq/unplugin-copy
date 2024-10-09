@@ -15,5 +15,5 @@
     "unplugin-copy": "workspace:*",
     "vite": "^5.4.8",
     "vite-plugin-inspect": "^0.8.7"
-  },"version": "0.1.5"
+  },"version": "0.1.6"
 }
