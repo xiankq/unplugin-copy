@@ -97,7 +97,7 @@
     "release": "bumpp -r",
     "============[CI]==========": "",
     "prepublish": "npm run build",
-    "publish:ci": "bumpp && npm publish"
+    "publish:ci": "npm publish -r --no-git-checks --access public"
   },
   "peerDependencies": {
     "@nuxt/kit": "^3",
