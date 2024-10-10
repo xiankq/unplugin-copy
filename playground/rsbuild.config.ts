@@ -5,6 +5,12 @@ export default defineConfig({
   html: {
     template: './index.html',
   },
+  dev: {
+    assetPrefix: '/copy/static/',
+  },
+  server: {
+    base: '/copy',
+  },
   source: {
     entry: {
       index: '/main.ts',
