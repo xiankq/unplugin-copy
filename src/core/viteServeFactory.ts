@@ -8,8 +8,9 @@ import { normalizePosixPath } from './utils'
 export const viteServeFactory: UnpluginFactory<UnpluginCopyOptions, false> = (options, _meta) => {
   let base = '/'
   return {
-    name: 'unplugin-copy:vite-serve',
+    name: 'unplugin-copy:serve',
     vite: {
+      apply: 'serve',
       configResolved(config) {
         base = normalizePosixPath(config.base || '/')
       },

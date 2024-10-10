@@ -16,6 +16,11 @@ export default defineConfig({
       index: '/main.ts',
     },
   },
+  output: {
+    distPath: {
+      root: './dist/rsbuild',
+    },
+  },
   tools: {
     rspack: {
       plugins: [
