@@ -1,5 +1,3 @@
-import type { Buffer } from 'node:buffer'
-
 export interface Target {
   /**
    * path or glob, relative to the root directory
