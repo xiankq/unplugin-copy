@@ -126,6 +126,9 @@
     "esbuild": {
       "optional": true
     },
+    "rolldown": {
+      "optional": true
+    },
     "rollup": {
       "optional": true
     },
