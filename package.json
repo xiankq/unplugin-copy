@@ -65,6 +65,11 @@
       "import": "./dist/nuxt.js",
       "require": "./dist/nuxt.cjs"
     },
+    "./rolldown": {
+      "types": "./dist/rolldown.d.ts",
+      "import": "./dist/rolldown.js",
+      "require": "./dist/rolldown.cjs"
+    },
     "./types": {
       "types": "./dist/types.d.ts",
       "import": "./dist/types.js",
@@ -100,14 +105,18 @@
     "publish:ci": "npm publish -r --no-git-checks --access public"
   },
   "peerDependencies": {
+    "@farmfe/core": ">=1",
     "@nuxt/kit": "^3",
     "@nuxt/schema": "^3",
     "esbuild": "*",
     "rollup": "^3",
     "vite": ">=3",
-    "webpack": ">=5"
+    "webpack": "^4 || ^5"
   },
   "peerDependenciesMeta": {
+    "@farmfe/core": {
+      "optional": true
+    },
     "@nuxt/kit": {
       "optional": true
     },
@@ -131,31 +140,32 @@
     "@types/fs-extra": "^11.0.4",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.0",
-    "serve-static": "^1.16.2",
-    "unplugin": "^2.1.2"
+    "serve-static": "^2.2.0",
+    "unplugin": "^2.3.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.14.0",
+    "@antfu/eslint-config": "^4.13.2",
     "@farmfe/core": "1.3.25",
-    "@nuxt/kit": "^3.15.2",
-    "@nuxt/schema": "^3.15.2",
-    "@types/node": "^22.10.7",
+    "@nuxt/kit": "^3.17.4",
+    "@nuxt/schema": "^3.17.4",
+    "@types/node": "^22.15.21",
     "@types/serve-static": "^1.15.7",
-    "bumpp": "^9.10.1",
+    "bumpp": "^10.1.1",
     "chalk": "^5.4.1",
-    "eslint": "^9.18.0",
+    "eslint": "^9.27.0",
     "eslint-plugin-format": "^1.0.1",
     "esno": "^4.8.0",
     "fast-glob": "^3.3.3",
-    "nodemon": "^3.1.9",
+    "nodemon": "^3.1.10",
     "rimraf": "^6.0.1",
-    "rolldown": "^1.0.0-beta.1",
-    "rollup": "^4.31.0",
-    "taze": "^18.2.0",
-    "tsup": "^8.3.5",
-    "typescript": "^5.7.3",
-    "vite": "^6.0.10",
-    "vitest": "^3.0.2",
-    "webpack": "^5.97.1"
+    "rolldown": "^1.0.0-beta.9",
+    "rollup": "^4.41.1",
+    "taze": "^19.1.0",
+    "tsdown": "^0.12.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.1.4",
+    "webpack": "^5.99.9"
   }
 }
