@@ -42,7 +42,7 @@ export const buildFactory: UnpluginFactory<UnpluginCopyOptions, false> = (option
       })
     },
 
-    async writeBundle() {
+    async buildEnd() {
       if (called) {
         return
       }
@@ -53,6 +53,11 @@ export const buildFactory: UnpluginFactory<UnpluginCopyOptions, false> = (option
       const promises = resolves.map(async (resolve) => {
         const dest = normalizePosixPath(path.join(_outputPath, resolve.dest))
         await fs.copy(resolve.src, dest)
+        this.emitFile({
+          type: 'asset',
+          fileName: resolve.dest,
+          source: await fs.readFile(resolve.src),
+        })
       })
       await Promise.all(promises)
     },
