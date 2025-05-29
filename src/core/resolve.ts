@@ -18,7 +18,7 @@ export function resolveCopyTarget(targets: Target[]) {
   const root = process.cwd()
 
   const promises = targets.map(async (target) => {
-    const dest = normalizePosixPath(path.join('/', target.dest))
+    const dest = normalizePosixPath(target.dest)
 
     const globs = await FastGlob(target.src, {
       dot: true,
@@ -39,9 +39,10 @@ export function resolveCopyTarget(targets: Target[]) {
 
       const destPath = normalizePosixPath(
         flatten
-          ? path.join('/', dest, path.basename(filePath))
-          : path.join('/', filePath.replace(srcDir, dest)),
+          ? path.join(dest, path.basename(filePath))
+          : path.join(filePath.replace(srcDir, dest)),
       )
+
       const rename = isFunction(target.rename) ? target.rename(filePath, destPath) : target.rename
       return {
         src: filePath,

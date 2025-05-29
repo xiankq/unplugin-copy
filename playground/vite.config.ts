@@ -9,7 +9,7 @@ export default defineConfig({
         // http://localhost:5173/vue/index.js => node_modules/vue/index.js
         {
           src: 'node_modules/vue/**',
-          dest: './vue',
+          dest: 'vue',
         },
       ],
     }),

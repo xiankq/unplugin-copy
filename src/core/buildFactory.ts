@@ -23,7 +23,6 @@ export const buildFactory: UnpluginFactory<UnpluginCopyOptions, false> = (option
           type: 'asset',
           fileName: resolve.dest,
           source: await fs.readFile(resolve.src),
-          originalFileName: resolve.src,
         })
       })
       await Promise.all(promises)
